@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingVertical="10dp"
+    android:orientation="vertical"
+    tools:context=".AjouterEtudiant">
+
+    <EditText
+        android:id="@+id/idtf"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/prenomtf"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Prenom" />
+
+    <EditText
+        android:id="@+id/nomtf"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nom" />
+
+    <EditText
+        android:id="@+id/datetf"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Date de Naissance" />
+
+    <EditText
+        android:id="@+id/anneetf"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Annee" />
+
+    <EditText
+        android:id="@+id/sectiontf"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Section" />
+
+    <EditText
+        android:id="@+id/grptf"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Groupe" />
+
+
+    <Button
+        android:id="@+id/ajouterBtn"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/teal_200"
+        android:layout_height="wrap_content"
+        android:text="Ajouter" />
+</LinearLayout>

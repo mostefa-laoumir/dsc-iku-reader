@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject - Copy/app/src/main/res/layout/activity_main.xml" value="0.13405797101449277" />
-        <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject - Copy/app/src/main/res/layout/activity_splash_screen.xml" value="0.4" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject - Copy/app/src/main/res/layout/activity_ajouter_etudiant.xml" value="0.264" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject - Copy/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject - Copy/app/src/main/res/layout/activity_show_student.xml" value="0.44837758112094395" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject - Copy/app/src/main/res/layout/activity_splash_screen.xml" value="0.152" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject - Copy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/QRProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.17481884057971014" />

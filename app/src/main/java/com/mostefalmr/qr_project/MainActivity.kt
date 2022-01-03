@@ -1,11 +1,13 @@
 package com.mostefalmr.qr_project
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -15,6 +17,7 @@ import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     private lateinit var codeScanner: CodeScanner
@@ -22,12 +25,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var dbManager = DBManager(this)
+        var dbManager = DBManager(this,null)
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
             == PackageManager.PERMISSION_DENIED)
-        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 1888)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 1888)
 
-
+        val addbtn :Button = findViewById(R.id.addButton)
+        addbtn.setOnClickListener {
+            addStudent(this)
+        }
         supportActionBar?.hide()
         val scannerView = findViewById<CodeScannerView>(R.id.scanner_view)
 
@@ -45,11 +51,28 @@ class MainActivity : AppCompatActivity() {
         // Callbacks
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                val webIntent: Intent = Uri.parse(it.text).let { webpage ->
-                    Intent(Intent.ACTION_VIEW, webpage)
+                val cursor = dbManager!!.getStudent(it.text)
+                if(cursor!=null && cursor.count!=0){
+                    try {
+                        cursor.moveToFirst()
+                        val id = cursor.getInt(0)
+                        val intent= Intent(this, ShowStudent::class.java)
+                        intent.putExtra("id", id)
+                        startActivity(intent)
 
+
+                    }catch (e: Exception){
+
+                    }
+
+
+                }else{
+                    try{
+                        val id = Integer.parseInt(it.text)
+                    }catch (e: Exception){
+                        Toast.makeText(this, "not a number", Toast.LENGTH_LONG).show()
+                    }
                 }
-                startActivity(webIntent)
                 Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
             }
         }
@@ -73,5 +96,9 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         codeScanner.releaseResources()
         super.onPause()
+    }
+    fun addStudent(context: Context){
+        var intent = Intent(context, AjouterEtudiant::class.java)
+        startActivity(intent)
     }
 }
