@@ -16,6 +16,7 @@ class DBManager {
         val dbTable = "Student"
         val dbTable2 = "Note"
         val dbTable3 = "Presence"
+        val dbTable4 = "Teacher"
     // DB Table "Student" columns
     val colID = "StudID" //primary key
     val colFName = "FName"//TEXT
@@ -114,6 +115,10 @@ class DBManager {
         return count
     }
     fun deletePres(selection:String, selectionArg:Array<String>):Int{
+        val count = sqlDB!!.delete(dbTable3,selection,selectionArg)
+        return count
+    }
+     fun deleteTeach(selection:String, selectionArg:Array<String>):Int{
         val count = sqlDB!!.delete(dbTable3,selection,selectionArg)
         return count
     }
