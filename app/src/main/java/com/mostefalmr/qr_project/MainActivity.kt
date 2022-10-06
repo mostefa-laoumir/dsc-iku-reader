@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             == PackageManager.PERMISSION_DENIED)
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 1888)
 
+    //WORK WITH USER LOCATION
 
         supportActionBar?.hide()
         val scannerView = findViewById<CodeScannerView>(R.id.scanner_view)
